@@ -1,0 +1,53 @@
+.activityBar {
+  width: var(--activity-bar-width);
+  background: var(--bg-1);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 0;
+  flex-shrink: 0;
+}
+
+.top,
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 6px;
+  position: relative;
+}
+
+.btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-3);
+}
+
+.btn.active {
+  color: var(--text-primary);
+}
+
+.btn.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 24px;
+  background: var(--accent);
+  border-radius: 0 2px 2px 0;
+}

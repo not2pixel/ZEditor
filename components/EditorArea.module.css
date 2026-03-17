@@ -1,0 +1,203 @@
+.editorArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-2);
+  overflow: hidden;
+}
+
+/* Tab Bar */
+.tabBar {
+  background: var(--bg-1);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  height: 35px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-shrink: 0;
+}
+
+.tabBar::-webkit-scrollbar {
+  height: 0;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  height: 100%;
+  min-width: 120px;
+  max-width: 200px;
+  background: var(--bg-2);
+  border-right: 1px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+  color: var(--text-secondary);
+  font-size: 13px;
+  position: relative;
+}
+
+.tab:hover {
+  background: var(--bg-3);
+  color: var(--text-primary);
+}
+
+.tab.active {
+  background: var(--bg-0);
+  color: var(--text-primary);
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+}
+
+.fileIcon {
+  flex-shrink: 0;
+}
+
+.tabName {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dirtyIndicator {
+  color: var(--text-primary);
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tab.dirty .closeBtn {
+  display: none;
+}
+
+.tab.dirty:hover .closeBtn {
+  display: flex;
+}
+
+.tab.dirty:hover .dirtyIndicator {
+  display: none;
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 4px;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.closeBtn:hover {
+  background: var(--bg-4);
+  color: var(--text-primary);
+}
+
+/* Editor Container */
+.editorContainer {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* Welcome Screen */
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: var(--bg-0);
+}
+
+.welcomeContent {
+  text-align: center;
+  max-width: 600px;
+  padding: 40px;
+}
+
+.welcomeLogo {
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.welcomeContent h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.welcomeContent p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.shortcuts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.shortcut {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.shortcut kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 8px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: monospace;
+  color: var(--text-primary);
+  box-shadow: 0 1px 0 var(--border);
+}
+
+.shortcut span {
+  min-width: 100px;
+  text-align: left;
+}
